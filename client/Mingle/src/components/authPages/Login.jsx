@@ -24,10 +24,13 @@ const Login = () => {
     }
 
     try {
-      const { data } = await axios.post("http://localhost:3000/api/login", {
-        email,
-        password,
-      });
+      const { data } = await axios.post(
+        "https://mingle-chat-app.onrender.com/api/login",
+        {
+          email,
+          password,
+        }
+      );
       console.log(data);
       const expiryTime = new Date().getTime() + 1000 * 60 * 60 * 24 * 7; // Token expires in 7 days (in milliseconds)
       localStorage.setItem("mingle-sender-id", data.user._id);

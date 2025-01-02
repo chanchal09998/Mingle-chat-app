@@ -35,7 +35,7 @@ const Home = () => {
 
   useEffect(() => {
     // Establish socket connection once when the component mounts
-    const socketConnection = io("ws://localhost:3000");
+    const socketConnection = io("wss://mingle-chat-app.onrender.com");
 
     // Set the socket connection to the state
     setSocket(socketConnection);
@@ -64,7 +64,7 @@ const Home = () => {
     if (!sender) return; // Avoid API call if sender is not set
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/api/get-present-chats",
+        "https://mingle-chat-app.onrender.com/api/get-present-chats",
         { sender }
       );
       if (data.success) {
@@ -112,7 +112,7 @@ const Home = () => {
     setIsLoadingSearch(true);
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/search-users",
+        "https://mingle-chat-app.onrender.com/api/search-users",
         { searchUsers }
       );
       setAvailableUsers(
@@ -161,7 +161,7 @@ const Home = () => {
     try {
       setLoadingMessage(true);
       const response = await axios.post(
-        "http://localhost:3000/api/open-chat-window-searched",
+        "https://mingle-chat-app.onrender.com/api/open-chat-window-searched",
         { _id }
       );
       setCurrentChatUser(response.data.user);
@@ -186,7 +186,7 @@ const Home = () => {
     try {
       setLoadingMessage(true);
       const response = await axios.post(
-        "http://localhost:3000/api/open-chat-window-default",
+        "https://mingle-chat-app.onrender.com/api/open-chat-window-default",
         { _id }
       );
       setCurrentChatUser(

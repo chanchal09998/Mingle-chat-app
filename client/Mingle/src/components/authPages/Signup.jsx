@@ -25,11 +25,14 @@ const Signup = () => {
     }
 
     try {
-      const { data } = await axios.post("http://localhost:3000/api/signup", {
-        email,
-        name,
-        password,
-      });
+      const { data } = await axios.post(
+        "https://mingle-chat-app.onrender.com/api/signup",
+        {
+          email,
+          name,
+          password,
+        }
+      );
 
       toast.success("Signup successful!");
       // Clear form

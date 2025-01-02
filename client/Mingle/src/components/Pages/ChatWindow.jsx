@@ -59,7 +59,7 @@ const ChatWindow = ({ currentChatUser, socket }) => {
     console.log("Fetching messages for:", { sender, receiver });
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/api/get-messages",
+        "https://mingle-chat-app.onrender.com/api/get-messages",
         { sender, receiver }
       );
       if (data.success) {
