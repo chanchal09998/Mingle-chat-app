@@ -1,0 +1,27 @@
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-container:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.logo-image {
+  height: 150px;
+  width: 150px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.logo-name {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 24px;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Soft text shadow */
+}

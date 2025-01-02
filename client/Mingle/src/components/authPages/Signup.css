@@ -1,0 +1,152 @@
+/* General styles */
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.signup-container {
+  width: 100%;
+  max-width: 450px; /* Adjusted width for a more consistent design */
+  background-color: white;
+  padding: 30px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  border-radius: 12px; /* More rounded corners */
+  transform: translateY(-20px); /* Subtle lift effect */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.signup-container:hover {
+  transform: translateY(0); /* Hover effect to bring the container down */
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+}
+
+.signup-header {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 32px; /* Larger font size for a bolder header */
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px; /* Increased spacing for a cleaner layout */
+}
+
+.input {
+  padding: 14px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px; /* Slightly rounded edges */
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease; /* Added shadow transition */
+}
+
+.input:focus {
+  border-color: #4b9cd3;
+  box-shadow: 0 0 8px rgba(75, 156, 211, 0.4); /* Light blue glow effect */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-btn {
+  padding: 14px 24px;
+  background-color: #4b9cd3;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px; /* Rounded button */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: #357ab7;
+  transform: scale(1.05); /* Slight scale-up effect for interaction */
+}
+
+.submit-btn:focus {
+  outline: none;
+}
+
+/* Already have account text styling */
+p {
+  text-align: center;
+  color: #777;
+}
+
+p a {
+  color: #4b9cd3;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .signup-container {
+    padding: 20px;
+  }
+
+  .signup-header {
+    font-size: 28px; /* Adjust header size for tablets */
+  }
+
+  .input {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-container {
+    padding: 16px;
+    max-width: 100%;
+  }
+
+  .signup-header {
+    font-size: 24px;
+  }
+
+  .input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    padding: 12px 18px;
+    font-size: 15px;
+  }
+}
