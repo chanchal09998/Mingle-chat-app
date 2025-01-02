@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./Chat_content.css";
 
 const Chat_content = ({ messages, currentUserId, receiver }) => {
+  const bottomRef = useRef(null); // Create a reference to the bottom of the chat
+
+  // Scroll to the bottom whenever the messages change
+  useEffect(() => {
+    if (bottomRef.current) {
+      bottomRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [messages]); // Trigger when the messages change
+
   return (
     <div className="chat-content-container">
       {messages && messages.length > 0 ? (
@@ -33,6 +42,9 @@ const Chat_content = ({ messages, currentUserId, receiver }) => {
           No messages yet. Start the conversation!
         </p>
       )}
+
+      {/* Add an empty div that will be targeted by the scroll */}
+      <div ref={bottomRef}></div>
     </div>
   );
 };
